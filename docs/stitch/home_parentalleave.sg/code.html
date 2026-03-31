@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ParentalLeave.sg - The Ultimate Singapore Parental Leave Calculator</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#004d60",
+              "tertiary-container": "#9f4122",
+              "error-container": "#ffdad6",
+              "on-error-container": "#93000a",
+              "surface-tint": "#00677f",
+              "inverse-on-surface": "#dff4ff",
+              "on-surface-variant": "#3f484c",
+              "surface-container-lowest": "#ffffff",
+              "secondary": "#006a62",
+              "surface-container-high": "#d5ecf8",
+              "on-tertiary": "#ffffff",
+              "tertiary-fixed": "#ffdbd0",
+              "surface": "#f3faff",
+              "on-tertiary-fixed": "#3a0b00",
+              "on-primary-container": "#98e3ff",
+              "on-primary-fixed": "#001f28",
+              "on-primary": "#ffffff",
+              "on-primary-fixed-variant": "#004e60",
+              "error": "#ba1a1a",
+              "on-secondary-container": "#006f66",
+              "on-secondary-fixed": "#00201d",
+              "on-error": "#ffffff",
+              "surface-variant": "#cfe6f2",
+              "primary-fixed-dim": "#86d1ec",
+              "secondary-container": "#81f3e5",
+              "outline": "#6f787d",
+              "on-secondary-fixed-variant": "#005049",
+              "background": "#f3faff",
+              "surface-container-highest": "#cfe6f2",
+              "surface-dim": "#c7dde9",
+              "tertiary": "#7f2a0d",
+              "primary-container": "#00677f",
+              "surface-bright": "#f3faff",
+              "secondary-fixed": "#84f5e8",
+              "on-tertiary-fixed-variant": "#7f2a0d",
+              "outline-variant": "#bfc8cd",
+              "on-tertiary-container": "#ffcebf",
+              "surface-container": "#dbf1fe",
+              "on-secondary": "#ffffff",
+              "inverse-surface": "#1e333c",
+              "primary-fixed": "#b6eaff",
+              "tertiary-fixed-dim": "#ffb59e",
+              "on-surface": "#071e27",
+              "inverse-primary": "#86d1ec",
+              "secondary-fixed-dim": "#66d9cc",
+              "on-background": "#071e27",
+              "surface-container-low": "#e6f6ff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+      }
+      .primary-gradient {
+        background: linear-gradient(135deg, #004d60 0%, #00677f 100%);
+      }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-8 py-4 backdrop-blur-xl bg-opacity-80 bg-[#f3faff] dark:bg-slate-950 z-50 shadow-[0_12px_32px_-4px_rgba(7,30,39,0.06)]">
+<div class="text-2xl font-black text-[#004d60] dark:text-[#00677f] tracking-tighter">ParentalLeave.sg</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-['Manrope'] font-semibold text-sm tracking-tight text-[#004d60] border-b-2 border-[#00677f] pb-1 transition-all duration-300" href="#">Calculator</a>
+<a class="font-['Manrope'] font-semibold text-sm tracking-tight text-[#071e27] dark:text-slate-300 opacity-80 hover:text-[#00677f] hover:opacity-100 transition-all duration-300" href="#">Maternity</a>
+<a class="font-['Manrope'] font-semibold text-sm tracking-tight text-[#071e27] dark:text-slate-300 opacity-80 hover:text-[#00677f] hover:opacity-100 transition-all duration-300" href="#">Paternity</a>
+<a class="font-['Manrope'] font-semibold text-sm tracking-tight text-[#071e27] dark:text-slate-300 opacity-80 hover:text-[#00677f] hover:opacity-100 transition-all duration-300" href="#">Childcare</a>
+</div>
+<button class="primary-gradient text-white px-6 py-2.5 rounded-full font-headline font-bold text-sm hover:opacity-90 active:scale-95 transition-all duration-150">
+            Get Started
+        </button>
+</nav>
+<!-- Hero Section -->
+<header class="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="relative z-10">
+<span class="inline-block px-4 py-1.5 rounded-full bg-surface-container-high text-primary font-label font-bold text-xs uppercase tracking-widest mb-6">Empathetic Guidance for Families</span>
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold text-on-surface leading-[1.1] mb-8 tracking-tight">
+                    The Ultimate Singapore <span class="text-primary">Parental Leave</span> Calculator
+                </h1>
+<p class="text-lg text-on-surface-variant leading-relaxed mb-10 max-w-lg">
+                    Navigating MOM and MSF policies shouldn't be your second job. We translate complex regulations into a simple, interactive plan for your growing family.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="primary-gradient text-white px-8 py-4 rounded-full font-headline font-bold text-lg shadow-lg hover:shadow-xl transition-all active:scale-95">
+                        Calculate Your Entitlements
+                    </button>
+<button class="bg-surface-container-highest text-on-surface px-8 py-4 rounded-full font-headline font-bold text-lg hover:bg-surface-variant transition-all">
+                        How it Works
+                    </button>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -top-20 -right-20 w-96 h-96 bg-secondary/10 rounded-full blur-[100px]"></div>
+<div class="relative rounded-[32px] overflow-hidden shadow-2xl transform lg:rotate-3 hover:rotate-0 transition-transform duration-700">
+<img class="w-full h-[500px] object-cover" data-alt="tender moment of a father holding a newborn baby in a sunlit modern nursery with soft natural lighting and warm atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsKDlrqdkCcpTvOwXvUPfOTPfmUEOaZLZvY_DSQNyM9EjHbUACDvvhoqgrwIFI1AzwW5xjoMB6gknnJUOzW7xovVnuVUplom8tMsvhXu1UduzXEY7qr6NQNdcgJJKd5IBXA00hyok5ND_DvQVWXT8gUoQtrO-QLym-ntDYAhxwEo_xTZSMMKfuVI_dAmUGA019sjwkPa1fLtfyIieJpHX-5p1hTJKx5wcgVFjhncNnaMby2lzTKD-KUa6vaTv9ujZVHN1fRe8P5g"/>
+<div class="absolute bottom-6 left-6 right-6 glass-card p-6 rounded-2xl shadow-sm">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white">
+<span class="material-symbols-outlined">event_available</span>
+</div>
+<div>
+<p class="text-xs font-bold text-primary uppercase">Next Milestone</p>
+<p class="font-headline font-bold text-on-surface">Paternity Leave: Starts Nov 12</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Leave Type Quick Links (Modern Cards) -->
+<section class="py-20 px-6 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-12">
+<div class="max-w-xl">
+<h2 class="font-headline text-3xl md:text-4xl font-bold mb-4">Leave Types at a Glance</h2>
+<p class="text-on-surface-variant">Singapore provides multiple types of support for parents. Select a category to explore detailed eligibility criteria.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Maternity -->
+<div class="group bg-surface-container-lowest p-8 rounded-[24px] hover:bg-white hover:shadow-xl transition-all duration-300">
+<div class="w-14 h-14 rounded-2xl bg-primary/5 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">child_care</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-3">Maternity</h3>
+<p class="text-sm text-on-surface-variant mb-6 leading-relaxed">Up to 16 weeks of paid leave for Singapore citizen babies, supported by government reimbursement.</p>
+<a class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-2 transition-transform" href="#">
+                        Learn More <span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+<!-- Paternity -->
+<div class="group bg-surface-container-lowest p-8 rounded-[24px] hover:bg-white hover:shadow-xl transition-all duration-300">
+<div class="w-14 h-14 rounded-2xl bg-primary/5 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">diversity_1</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-3">Paternity</h3>
+<p class="text-sm text-on-surface-variant mb-6 leading-relaxed">2 to 4 weeks of paid paternity leave to support your partner and bond with your newborn.</p>
+<a class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-2 transition-transform" href="#">
+                        Explore <span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+<!-- Shared Parental -->
+<div class="group bg-surface-container-lowest p-8 rounded-[24px] hover:bg-white hover:shadow-xl transition-all duration-300">
+<div class="w-14 h-14 rounded-2xl bg-primary/5 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">sync</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-3">Shared Leave</h3>
+<p class="text-sm text-on-surface-variant mb-6 leading-relaxed">Fathers can apply to share up to 4 weeks of their wife's maternity leave entitlements.</p>
+<a class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-2 transition-transform" href="#">
+                        Details <span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+<!-- Childcare -->
+<div class="group bg-surface-container-lowest p-8 rounded-[24px] hover:bg-white hover:shadow-xl transition-all duration-300">
+<div class="w-14 h-14 rounded-2xl bg-primary/5 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">toys</span>
+</div>
+<h3 class="font-headline text-xl font-bold mb-3">Childcare</h3>
+<p class="text-sm text-on-surface-variant mb-6 leading-relaxed">Annual leave entitlements to attend to your children's needs, school events, or clinic visits.</p>
+<a class="text-primary font-bold text-sm flex items-center gap-2 group-hover:translate-x-2 transition-transform" href="#">
+                        Policy <span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Use Us & Impact Stats (Asymmetric Bento Grid) -->
+<section class="py-24 px-6 max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Main Content -->
+<div class="md:col-span-8 bg-white p-12 rounded-[32px] shadow-sm relative overflow-hidden">
+<div class="relative z-10">
+<h2 class="font-headline text-4xl font-bold mb-6 text-primary">The Policy Gap, Bridged.</h2>
+<p class="text-lg text-on-surface-variant mb-8 leading-relaxed max-w-2xl">
+                        MOM and MSF provide the rules, but we provide the clarity. Instead of navigating PDF documents and outdated government portals, use our concierge-style calculator to plan your specific dates, share schedules with employers, and maximize your time at home.
+                    </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-tertiary-container text-3xl" data-weight="fill">verified</span>
+<div>
+<h4 class="font-headline font-bold">100% Policy Accurate</h4>
+<p class="text-sm text-on-surface-variant">Updated daily with the latest 2024 MOM guidelines.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-secondary text-3xl" data-weight="fill">schedule</span>
+<div>
+<h4 class="font-headline font-bold">Visual Calendar</h4>
+<p class="text-sm text-on-surface-variant">See your leave periods on a timeline, not just a list.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute top-0 right-0 w-64 h-64 bg-surface-container -mr-20 -mt-20 rounded-full blur-3xl opacity-50"></div>
+</div>
+<!-- Impact Counter -->
+<div class="md:col-span-4 primary-gradient p-12 rounded-[32px] text-white flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-6xl mb-6" style="font-variation-settings: 'FILL' 1;">groups</span>
+<div class="text-6xl font-headline font-black mb-2 tracking-tighter">15,420+</div>
+<p class="font-headline text-lg opacity-90 mb-8 uppercase tracking-widest text-sm">Parents Supported</p>
+<div class="w-full bg-white/10 h-[1px] mb-8"></div>
+<p class="text-sm italic opacity-80">"It made the conversation with my HR so much easier. I had all the dates and policies ready."</p>
+<p class="text-xs font-bold mt-2">— Sarah L., New Mom</p>
+</div>
+</div>
+</section>
+<!-- Newsletter Opt-in -->
+<section class="py-20 px-6 max-w-5xl mx-auto mb-24">
+<div class="bg-surface-container border border-white/50 rounded-[40px] p-8 md:p-16 text-center relative overflow-hidden">
+<div class="relative z-10">
+<h2 class="font-headline text-3xl md:text-4xl font-bold mb-4">Stay Informed as You Grow</h2>
+<p class="text-on-surface-variant mb-10 max-w-xl mx-auto">Get 'Parental Leave Updates &amp; Tips' delivered to your inbox. No spam, just Singaporean policy changes and parenting hacks.</p>
+<form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+<input class="flex-1 bg-surface-container-lowest border-none rounded-full px-6 py-4 focus:ring-2 focus:ring-primary text-on-surface font-body outline-none" placeholder="Enter your email address" required="" type="email"/>
+<button class="primary-gradient text-white px-8 py-4 rounded-full font-headline font-bold hover:opacity-90 transition-all shadow-md" type="submit">
+                        Join Community
+                    </button>
+</form>
+<p class="text-[10px] text-outline mt-6 uppercase tracking-widest">We value your privacy. Unsubscribe at any time.</p>
+</div>
+<!-- Decorative circle -->
+<div class="absolute -bottom-24 -left-24 w-64 h-64 bg-tertiary-fixed-dim/20 rounded-full blur-3xl"></div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full bg-[#dbf1fe] dark:bg-slate-900 rounded-t-[32px] mt-auto">
+<div class="w-full px-12 py-16 grid grid-cols-1 md:grid-cols-4 gap-12 max-w-7xl mx-auto">
+<div class="md:col-span-1">
+<div class="font-['Manrope'] font-bold text-[#004d60] text-2xl mb-4">ParentalLeave.sg</div>
+<p class="font-['Inter'] text-xs uppercase tracking-widest text-[#071e27] opacity-60 mb-6 leading-relaxed">
+                    Supporting Singaporean Families with accurate, easy-to-understand leave planning.
+                </p>
+</div>
+<div>
+<h4 class="font-['Inter'] text-xs uppercase tracking-widest text-[#071e27] font-bold mb-6">Policies</h4>
+<div class="flex flex-col gap-4">
+<a class="font-['Inter'] text-xs uppercase tracking-widest text-[#071e27] opacity-60 hover:opacity-100 hover:text-[#004d60] transition-colors" href="#">MOM Policy</a>
+<a class="font-['Inter'] text-xs uppercase tracking-widest text-[#071e27] opacity-60 hover:opacity-100 hover:text-[#004d60] transition-colors" href="#">MSF References</a>
+</div>
+</div>
+<div>
+<h4 class="font-['Inter'] text-xs uppercase tracking-widest text-[#071e27] font-bold mb-6">Legal</h4>
+<div class="flex flex-col gap-4">
+<a class="font-['Inter'] text-xs uppercase tracking-widest text-[#071e27] opacity-60 hover:opacity-100 hover:text-[#004d60] transition-colors" href="#">Privacy Policy</a>
+<a class="font-['Inter'] text-xs uppercase tracking-widest text-[#071e27] opacity-60 hover:opacity-100 hover:text-[#004d60] transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+<div>
+<h4 class="font-['Inter'] text-xs uppercase tracking-widest text-[#071e27] font-bold mb-6">Updates</h4>
+<div class="flex flex-col gap-4">
+<a class="font-['Inter'] text-xs uppercase tracking-widest text-[#071e27] opacity-60 hover:opacity-100 hover:text-[#004d60] transition-colors" href="#">Newsletter</a>
+</div>
+</div>
+</div>
+<div class="w-full max-w-7xl mx-auto px-12 pb-12 border-t border-primary/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-['Inter'] text-xs uppercase tracking-widest text-[#071e27] opacity-60">© 2024 ParentalLeave.sg. Supporting Singaporean Families.</p>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-[#004d60] opacity-60 hover:opacity-100 cursor-pointer transition-opacity">share</span>
+<span class="material-symbols-outlined text-[#004d60] opacity-60 hover:opacity-100 cursor-pointer transition-opacity">favorite</span>
+</div>
+</div>
+</footer>
+</body></html>

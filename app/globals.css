@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Stitch Design System — Global Styles */
+
+@layer base {
+  :root {
+    --primary: #004d60;
+    --primary-container: #00677f;
+    --surface: #f3faff;
+    --on-surface: #071e27;
+  }
+
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #f3faff;
+    color: #071e27;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #f3faff;
+    color: #071e27;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  /* ── Primary gradient ─────────────────────────────────────────────────────── */
+  .primary-gradient {
+    background: linear-gradient(135deg, #004d60 0%, #00677f 100%);
+  }
+
+  /* ── Glassmorphism ────────────────────────────────────────────────────────── */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .glass-nav {
+    background: rgba(243, 250, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 12px 32px -4px rgba(7, 30, 39, 0.06);
+  }
+
+  /* ── Ambient shadow ───────────────────────────────────────────────────────── */
+  .shadow-ambient {
+    box-shadow: 0 12px 32px -4px rgba(7, 30, 39, 0.06);
+  }
+
+  /* ── Calculator input — Stitch "bottom-bar" focus pattern ────────────────── */
+  .input-stitch {
+    @apply w-full px-4 py-3 bg-surface-container-lowest border-0 border-b-2 border-transparent
+           focus:border-primary focus:ring-0 rounded-lg shadow-card font-label font-medium
+           transition-all duration-200 text-on-surface outline-none;
+  }
+
+  .input-stitch:focus {
+    background-color: #f0f9ff;
+  }
+
+  /* ── Label ────────────────────────────────────────────────────────────────── */
+  .label-stitch {
+    @apply text-sm font-semibold text-on-surface;
+  }
+
+  /* ── Step badge — numbered circle ────────────────────────────────────────── */
+  .step-badge {
+    @apply w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center
+           font-headline font-bold text-sm flex-shrink-0;
+  }
+
+  /* ── Card styles ──────────────────────────────────────────────────────────── */
+  .card-surface {
+    @apply bg-surface-container-lowest rounded-[24px] p-6 transition-all duration-300;
+  }
+
+  .card-section {
+    @apply bg-surface-container-low rounded-xl p-8;
+  }
+
+  /* ── Leave type radio card ────────────────────────────────────────────────── */
+  .leave-radio-card {
+    @apply flex items-start gap-3 p-4 bg-surface-container-lowest rounded-xl border border-outline-variant/40
+           cursor-pointer hover:border-primary/40 hover:bg-primary-fixed/20
+           transition-all duration-200 text-left w-full;
+  }
+
+  .leave-radio-card.active {
+    @apply border-primary bg-primary-fixed/30 ring-1 ring-primary/30;
+  }
+
+  /* ── Result panel — dark teal ─────────────────────────────────────────────── */
+  .result-panel {
+    background: linear-gradient(160deg, #002d3d 0%, #004d60 60%, #00677f 100%);
+  }
+
+  /* ── Warning/ineligible card ──────────────────────────────────────────────── */
+  .warning-card {
+    @apply card-surface border border-amber-200 bg-amber-50/50;
+  }
+
+  /* ── Primary button ───────────────────────────────────────────────────────── */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-primary text-white
+           rounded-xl px-6 py-3 font-semibold text-sm
+           hover:opacity-90 transition-all duration-200
+           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary;
+  }
+
+  /* ── Secondary button ─────────────────────────────────────────────────────── */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 bg-surface-container
+           text-on-surface rounded-xl px-6 py-3 font-semibold text-sm
+           hover:bg-surface-container-highest transition-colors duration-200;
+  }
+
+  /* ── Result panel CTA buttons (inside dark panel) ────────────────────────── */
+  .btn-panel-primary {
+    @apply w-full flex items-center justify-center gap-2 py-3 px-4
+           bg-white text-primary rounded-full font-semibold text-sm
+           hover:bg-white/90 transition-all duration-200;
+  }
+
+  .btn-panel-secondary {
+    @apply w-full flex items-center justify-center gap-2 py-3 px-4
+           bg-white/20 text-white rounded-full font-semibold text-sm
+           hover:bg-white/30 transition-all duration-200 border border-white/20;
+  }
+
+  /* ── Gov badge ────────────────────────────────────────────────────────────── */
+  .gov-badge {
+    @apply inline-flex items-center gap-1.5 text-xs text-primary bg-primary-fixed/40
+           border border-primary/20 rounded-full px-3 py-1;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Material Symbols */
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .material-symbols-filled {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Print styles */
+@media print {
+  nav, .ad-unit, .share-card-actions, footer {
+    display: none !important;
+  }
+  body {
+    background: white;
+  }
+  .print-break {
+    page-break-before: always;
+  }
+}
