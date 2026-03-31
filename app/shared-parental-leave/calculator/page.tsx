@@ -69,20 +69,31 @@ export default function SPLCalculatorPage() {
           ]}
         />
 
-        <div className="mb-8">
-          <div className="flex flex-wrap items-center gap-3 mb-3">
-            <LastUpdated date="April 2025" />
-            <GovernmentBadge />
-            <span className="text-xs font-semibold bg-tertiary-fixed-dim/30 text-on-surface px-2 py-0.5 rounded-full">
-              Phase 2: 10 weeks from Apr 2026
-            </span>
+        <div className="mb-8 flex flex-col lg:flex-row lg:items-start lg:gap-8">
+          <div className="flex-1">
+            <div className="flex flex-wrap items-center gap-3 mb-3">
+              <LastUpdated date="April 2025" />
+              <GovernmentBadge />
+              <span className="text-xs font-semibold bg-tertiary-fixed-dim/30 text-on-surface px-2 py-0.5 rounded-full">
+                Phase 2: 10 weeks from Apr 2026
+              </span>
+            </div>
+            <h1 className="font-headline font-bold text-2xl sm:text-3xl text-on-surface mb-3">
+              Shared Parental Leave Planner Singapore 2026
+            </h1>
+            <p className="text-on-surface-variant max-w-2xl">
+              Plan how to split Shared Parental Leave (SPL) between parents. From April 2026 (Phase 2), families get 10 weeks of SPL — bringing total paid leave to 30 weeks. Use the slider to explore different split scenarios and see estimated pay for each parent.
+            </p>
           </div>
-          <h1 className="font-headline font-bold text-2xl sm:text-3xl text-on-surface mb-3">
-            Shared Parental Leave Planner Singapore 2026
-          </h1>
-          <p className="text-on-surface-variant max-w-2xl">
-            Plan how to split Shared Parental Leave (SPL) between parents. From April 2026 (Phase 2), families get 10 weeks of SPL — bringing total paid leave to 30 weeks. Use the slider to explore different split scenarios and see estimated pay for each parent.
-          </p>
+          {/* Hero image */}
+          <div className="hidden lg:block w-56 xl:w-64 flex-shrink-0 rounded-2xl overflow-hidden shadow-md mt-1">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/spl-couple.jpg"
+              alt="Couple sharing parental leave with baby"
+              className="w-full h-44 object-cover"
+            />
+          </div>
         </div>
 
         <SPLPlanner />

@@ -70,17 +70,28 @@ export default function MaternityCalculatorPage() {
         />
 
         {/* Static SEO content — above the fold, crawlable */}
-        <div className="mb-8">
-          <div className="flex flex-wrap items-center gap-3 mb-3">
-            <LastUpdated date="April 2025" />
-            <GovernmentBadge />
+        <div className="mb-8 flex flex-col lg:flex-row lg:items-start lg:gap-8">
+          <div className="flex-1">
+            <div className="flex flex-wrap items-center gap-3 mb-3">
+              <LastUpdated date="April 2025" />
+              <GovernmentBadge />
+            </div>
+            <h1 className="font-headline font-bold text-2xl sm:text-3xl text-on-surface mb-3">
+              Maternity Leave Calculator Singapore 2026
+            </h1>
+            <p className="text-on-surface-variant max-w-2xl">
+              Calculate your exact maternity leave entitlement and estimated pay in Singapore. Enter your details below to get instant results based on the latest 2026 MOM guidelines — covering Government-Paid Maternity Leave (GPML) for Singapore Citizens and Employment Act leave for all mothers.
+            </p>
           </div>
-          <h1 className="font-headline font-bold text-2xl sm:text-3xl text-on-surface mb-3">
-            Maternity Leave Calculator Singapore 2026
-          </h1>
-          <p className="text-on-surface-variant max-w-2xl">
-            Calculate your exact maternity leave entitlement and estimated pay in Singapore. Enter your details below to get instant results based on the latest 2026 MOM guidelines — covering Government-Paid Maternity Leave (GPML) for Singapore Citizens and Employment Act leave for all mothers.
-          </p>
+          {/* Hero image */}
+          <div className="hidden lg:block w-56 xl:w-64 flex-shrink-0 rounded-2xl overflow-hidden shadow-md mt-1">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/maternity-mother.jpg"
+              alt="Expectant mother in Singapore"
+              className="w-full h-44 object-cover"
+            />
+          </div>
         </div>
 
         {/* Interactive calculator component */}

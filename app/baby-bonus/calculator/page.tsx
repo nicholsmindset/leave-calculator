@@ -69,17 +69,28 @@ export default function BabyBonusCalculatorPage() {
           ]}
         />
 
-        <div className="mb-8">
-          <div className="flex flex-wrap items-center gap-3 mb-3">
-            <LastUpdated date="April 2025" />
-            <GovernmentBadge href="https://life.gov.sg/family-parenting/benefits-support/baby-bonus-scheme" label="Based on LifeSG 2026 rates" />
+        <div className="mb-8 flex flex-col lg:flex-row lg:items-start lg:gap-8">
+          <div className="flex-1">
+            <div className="flex flex-wrap items-center gap-3 mb-3">
+              <LastUpdated date="April 2025" />
+              <GovernmentBadge href="https://life.gov.sg/family-parenting/benefits-support/baby-bonus-scheme" label="Based on LifeSG 2026 rates" />
+            </div>
+            <h1 className="font-headline font-bold text-2xl sm:text-3xl text-on-surface mb-3">
+              Baby Bonus Calculator Singapore 2026
+            </h1>
+            <p className="text-on-surface-variant max-w-2xl">
+              Calculate your total Baby Bonus in Singapore — Cash Gift, CDA First Step Grant, and government co-matching for your Child Development Account (CDA). Includes the enhanced Large Families Scheme rates for 3rd and subsequent children born on or after 18 February 2025.
+            </p>
           </div>
-          <h1 className="font-headline font-bold text-2xl sm:text-3xl text-on-surface mb-3">
-            Baby Bonus Calculator Singapore 2026
-          </h1>
-          <p className="text-on-surface-variant max-w-2xl">
-            Calculate your total Baby Bonus in Singapore — Cash Gift, CDA First Step Grant, and government co-matching for your Child Development Account (CDA). Includes the enhanced Large Families Scheme rates for 3rd and subsequent children born on or after 18 February 2025.
-          </p>
+          {/* Hero image */}
+          <div className="hidden lg:block w-56 xl:w-64 flex-shrink-0 rounded-2xl overflow-hidden shadow-md mt-1">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/baby-bonus.jpg"
+              alt="Happy Singapore family celebrating baby bonus"
+              className="w-full h-44 object-cover"
+            />
+          </div>
         </div>
 
         <BabyBonusCalculator />

@@ -69,20 +69,31 @@ export default function PaternityCalculatorPage() {
           ]}
         />
 
-        <div className="mb-8">
-          <div className="flex flex-wrap items-center gap-3 mb-3">
-            <LastUpdated date="April 2025" />
-            <GovernmentBadge />
-            <span className="text-xs font-semibold bg-tertiary-fixed-dim/30 text-on-surface px-2 py-0.5 rounded-full">
-              Updated: 4 weeks for SC babies
-            </span>
+        <div className="mb-8 flex flex-col lg:flex-row lg:items-start lg:gap-8">
+          <div className="flex-1">
+            <div className="flex flex-wrap items-center gap-3 mb-3">
+              <LastUpdated date="April 2025" />
+              <GovernmentBadge />
+              <span className="text-xs font-semibold bg-tertiary-fixed-dim/30 text-on-surface px-2 py-0.5 rounded-full">
+                Updated: 4 weeks for SC babies
+              </span>
+            </div>
+            <h1 className="font-headline font-bold text-2xl sm:text-3xl text-on-surface mb-3">
+              Paternity Leave Calculator Singapore 2026
+            </h1>
+            <p className="text-on-surface-variant max-w-2xl">
+              Calculate your Government-Paid Paternity Leave (GPPL) entitlement in Singapore. From 1 April 2025, fathers with Singapore Citizen babies receive 4 weeks of GPPL. Enter your details below to see your entitlement, estimated pay, and flexible leave split options.
+            </p>
           </div>
-          <h1 className="font-headline font-bold text-2xl sm:text-3xl text-on-surface mb-3">
-            Paternity Leave Calculator Singapore 2026
-          </h1>
-          <p className="text-on-surface-variant max-w-2xl">
-            Calculate your Government-Paid Paternity Leave (GPPL) entitlement in Singapore. From 1 April 2025, fathers with Singapore Citizen babies receive 4 weeks of GPPL. Enter your details below to see your entitlement, estimated pay, and flexible leave split options.
-          </p>
+          {/* Hero image */}
+          <div className="hidden lg:block w-56 xl:w-64 flex-shrink-0 rounded-2xl overflow-hidden shadow-md mt-1">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/paternity-father.jpg"
+              alt="Father with newborn baby in Singapore"
+              className="w-full h-44 object-cover"
+            />
+          </div>
         </div>
 
         <PaternityCalculator />

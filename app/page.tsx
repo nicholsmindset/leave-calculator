@@ -84,6 +84,20 @@ export default function HomePage() {
           style={{ backgroundImage: 'radial-gradient(circle at 25% 50%, white 1px, transparent 1px), radial-gradient(circle at 75% 50%, white 1px, transparent 1px)', backgroundSize: '60px 60px' }}
         />
 
+        {/* Hero banner image — right side, blends into teal */}
+        <div className="absolute inset-y-0 right-0 w-[55%] hidden lg:block pointer-events-none" aria-hidden="true">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/hero-family.jpg"
+            alt=""
+            className="w-full h-full object-cover object-center"
+          />
+          {/* Teal tint — blends photo colour into hero palette */}
+          <div className="absolute inset-0" style={{ backgroundColor: '#00677f', opacity: 0.65 }} />
+          {/* Left fade — photo dissolves into solid teal behind the text */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#004d60] via-[#004d60]/70 to-transparent" />
+        </div>
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-6">
